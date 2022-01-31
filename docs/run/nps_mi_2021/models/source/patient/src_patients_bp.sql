@@ -124,7 +124,7 @@ inner join
 on hspo.HUB_SITE_PATIENT_SK = satt.HUB_SITE_PATIENT_SK
 inner join 
 `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`SITE` ss
-on hspo.SITE_ID = ss.HUB_SITE_SK
+on hspo.SITE_ID = ss.SITE_NUMBER
 left join
 `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_postcode_phncode` phn 
 on ss.POSTCODE_ORIGINAL = phn.POSTCODE_2019

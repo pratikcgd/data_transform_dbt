@@ -26,7 +26,7 @@ CRM_SITE_RECRUITMENT_STATUS, SITE_EXTRACTION_TYPE
 
 site_table as (
 select
-cast(hso.HUB_SITE_SK as string) as HUB_SITE_SK,
+cast(hso.HUB_SITE_SK as string) as SITE_NUMBER,
 cast(hso.SITE_ID as string) as SITE_ID,
 cast(sbdv.SITE_NAME as string) as SITE_NAME,
 cast(satt.SITE_CONTROLLER as string) as SITE_CONTROLLER,
