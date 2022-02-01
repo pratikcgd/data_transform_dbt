@@ -1,6 +1,6 @@
 
 
-  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_postcode_phncode`
+  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_postcode_phncode`
   OPTIONS()
   as 
 

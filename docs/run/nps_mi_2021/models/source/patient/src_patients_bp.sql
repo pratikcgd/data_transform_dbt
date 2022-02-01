@@ -1,6 +1,6 @@
 
 
-  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_patients_bp`
+  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_patients_bp`
   OPTIONS()
   as 
 
@@ -126,7 +126,7 @@ inner join
 `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`SITE` ss
 on hspo.SITE_ID = ss.SITE_NUMBER
 left join
-`nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_postcode_phncode` phn 
+`nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_postcode_phncode` phn 
 on ss.POSTCODE_ORIGINAL = phn.POSTCODE_2019
 where
     satt.OMD_CURRENT_RECORD_INDICATOR = 'Y'

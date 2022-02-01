@@ -41,7 +41,7 @@ ON
 	LNK_BDV.LNK_BDV_DIAGNOSIS_SK = LSAT_BDV.LNK_BDV_DIAGNOSIS_SK
 JOIN
 /** Patient table joins **/
-	`nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_active_patients` ACTIVE_PATIENTS
+	`nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_active_patients` ACTIVE_PATIENTS
 ON
 	LNK_BDV.HUB_SITE_PATIENT_SK = ACTIVE_PATIENTS.HUB_SITE_PATIENT_SK
 /* Filters to retrieve non-deleted and current records */

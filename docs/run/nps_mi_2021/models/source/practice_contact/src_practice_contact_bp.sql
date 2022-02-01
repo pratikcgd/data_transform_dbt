@@ -1,6 +1,6 @@
 
 
-  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021`.`src_practice_contact_bp`
+  create or replace view `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_practice_contact_bp`
   OPTIONS()
   as 
 
