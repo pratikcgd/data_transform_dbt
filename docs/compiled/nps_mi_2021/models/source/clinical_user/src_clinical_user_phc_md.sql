@@ -3,10 +3,11 @@
 with clinical_user_phc_md as (
 select 
 cast(hpo.SITE_ID as string) as SITE_ID,
-cast(hpo.PRACTITIONER_ID  as string) as PROVIDER_ID,
+cast(NULL  as string) as PROVIDER_ID,
 cast(sspm.PRESCRIBER_NO as string) as PRESCRIBER_NUMBER,
 cast(sspm.PROVIDER_NO as string) as PROVIDER_NUMBER,
 cast("PHC_MD" as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PROVIDER_PHC_MD_OMOP' as string) as SOURCE_TABLE,
 cast(null as int) as CLINICAL_USER_TYPE_CODE,
 cast(NULL as string) as CLINICAL_USER_TYPE_NAME,
 cast(NULL as string) as DOCTOR_INDICATOR,
@@ -16,7 +17,7 @@ cast(NULL as string) as PROVIDER_WORK_STATUS,
 cast(null as string) as PROVIDER_INACTIVE_DATE,
 cast(sspm.STAMP_CREATED_DATETIME as string) as CREATE_DATETTIME,
 cast(NULL as string) as PROVIDER_UPDATED_USER_ID,
-cast(null as string) as PROVIDER_UPDATED_DATETIME,
+cast(sspm.STAMP_DATETIME  as string) as PROVIDER_UPDATED_DATETIME,
 cast(NULL as string) as PRESCRIBER_NUMBER_VALID_FLAG,
 cast(NULL as string) as PROVIDER_NUMBER_VALID_FLAG
 from 

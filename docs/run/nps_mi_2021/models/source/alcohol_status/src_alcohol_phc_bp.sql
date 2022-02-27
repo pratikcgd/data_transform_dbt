@@ -70,5 +70,9 @@ WHERE
 
 )
 
-select * from alcohol_phc_bp;
+SELECT DISTINCT * FROM 
+alcohol_phc_bp s1
+where OMD_SOURCE_ROW_ID = (SELECT MAX(OMD_SOURCE_ROW_ID) 
+FROM alcohol_phc_bp s2
+WHERE s1.PATIENT_NUMBER = s2.PATIENT_NUMBER);
 

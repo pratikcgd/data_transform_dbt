@@ -39,33 +39,21 @@ cast(case
         ELSE
         'Not Deceased' END as string) as DECEASED_INDICATOR,
 cast(case 
-		when satt.ORIGIN = 1
-		THEN '1'
-		WHEN satt.ORIGIN = 2
-		THEN '2'
-		when satt.ORIGIN = 3
-		THEN '3'
-		when satt.ORIGIN = 4
-		THEN '4'
-        when satt.ORIGIN = 8
-		THEN '9'
-        when satt.ORIGIN = 0
-		THEN '99'
-		END AS STRING) as ATSI_CODE,
+        WHEN satt.ETHNIC_CODE = 1102
+        THEN '1'
+        WHEN satt.ETHNIC_CODE = 1104
+        THEN '2'
+        ELSE
+        '99'
+        END AS STRING) as ATSI_CODE,
 cast(case 
-		when satt.ORIGIN = 1
-		THEN 'Aboriginal but not TSI origin'
-		WHEN satt.ORIGIN = 2
-		THEN 'TSI but not Aboriginal origin'
-		when satt.ORIGIN = 3
-		THEN 'Both Aboriginal and TSI origin'
-		when satt.ORIGIN = 4
-		THEN 'Neither Aboriginal nor TSI origin'
-        when satt.ORIGIN = 8
-		THEN 'Not stated/inadequately described'
-		when satt.ORIGIN = 0
-        THEN 'Not recorded'
-		END AS STRING) as ATSI_NAME,
+        WHEN satt.ETHNIC_CODE = 1102
+        THEN 'Aboriginal but not TSI origin'
+        WHEN satt.ETHNIC_CODE = 1104
+        THEN 'TSI but not Aboriginal origin'
+        ELSE
+        'Not recorded'
+        END AS STRING) as ATSI_NAME,
 cast(case 
         when satt.PENSION_CODE = 1
         THEN '1'
@@ -111,7 +99,9 @@ cast(case
 cast(satt.CREATED as string) as PATIENT_CREATED_DATE,
 cast(satt.UPDATED as string) as PATIENT_MODIFIED_DATE,
 cast(phn.PHN_CODE_2017 as string) as PHN_CODE,
-cast(ss.POSTCODE_ORIGINAL as INT) as SITE_POSTCODE
+cast(ss.POSTCODE_ORIGINAL as INT) as SITE_POSTCODE,
+cast('BP_PHC' as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PATIENT_PHC_BP_OMOP' as string) as SOURCE_TABLE,
 from 
 `nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`HUB_SITE_PATIENT_OMOP` hspo 
 inner join 

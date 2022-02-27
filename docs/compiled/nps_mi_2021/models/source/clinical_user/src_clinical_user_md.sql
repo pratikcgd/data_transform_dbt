@@ -3,10 +3,11 @@
 with clinical_user_md as (
 select 
 cast(hpo.SITE_ID as string) as SITE_ID,
-cast(hpo.PRACTITIONER_ID  as string) as PROVIDER_ID,
+cast(NULL as string) as PROVIDER_ID,
 cast(hpro.PRESCRIBER_NUMBER as string) as PRESCRIBER_NUMBER,
 cast(hprov.PROVIDER_NUMBER as string) as PROVIDER_NUMBER,
 cast("MD" as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PROVIDER_MD_OMOP' as string) as SOURCE_TABLE,
 cast(null as int) as CLINICAL_USER_TYPE_CODE,
 cast(NULL as string) as CLINICAL_USER_TYPE_NAME,
 cast(NULL as string) as DOCTOR_INDICATOR,

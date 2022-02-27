@@ -3,7 +3,7 @@
 SELECT
 cast(hpo.SITE_ID as string) as SITE_ID,
 cast(NULL as string) as PRACTICE_NAME,
-cast(hpo.PRACTITIONER_ID as string) as PRACTICE_ID,
+cast(NULL as string) as PRACTICE_ID,
 cast(NULL as string) as CRMID,
 cast(sspm.PROVIDER_NO as string) as PROVIDER_NUMBER,
 cast(NULL as string) as CRM_CONTACT_ID,
@@ -11,7 +11,9 @@ cast(NULL as string) as CONTACT_SALUTATION,
 cast(NULL as string) as CONTACT_FIRSTNAME,
 cast(NULL as string) as CONTACT_LASTNAME,
 cast(NULL as string) as CONTACT_NPS_ROLE,
-cast(NULL as string) as CONTACT_MEDICINEINSIGHT_ROLE
+cast(NULL as string) as CONTACT_MEDICINEINSIGHT_ROLE,
+cast('MD_PHC' as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PROVIDER_PHC_MD_OMOP' as string) as SOURCE_TABLE
 from 
 `nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`HUB_SITE_PROVIDER_MD_OMOP` hpo 
 inner join 

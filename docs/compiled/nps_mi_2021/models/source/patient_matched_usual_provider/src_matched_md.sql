@@ -3,7 +3,7 @@
 select 
 cast(lbdv.HUB_SITE_PATIENT_SK as string) as PATIENT_NUMBER,
 cast(hpo.SITE_ID as string) as SITE_ID,
-cast(hpo.PRACTITIONER_ID as string) as PROVIDER_ID,
+cast(NULL as string) as PROVIDER_ID,
 cast("MD" as string) as SOURCE_SYSTEM,
 cast('SAT_SITE_PROVIDER_MD_OMOP' as string) as SOURCE_TABLE,
 cast(NULL as string) as PROVIDER_NUMBER,

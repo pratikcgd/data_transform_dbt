@@ -114,7 +114,9 @@ cast(case
 cast(satt.PATIENT_CREATED_DATETIME as string) as PATIENT_CREATED_DATE,
 cast(satt.PATIENT_UPDATED_DATETIME as string) as PATIENT_MODIFIED_DATE,
 cast(phn.PHN_CODE_2017 as string) as PHN_CODE,
-cast(ss.POSTCODE_ORIGINAL as INT) as SITE_POSTCODE
+cast(ss.POSTCODE_ORIGINAL as INT) as SITE_POSTCODE,
+cast('MD' as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PATIENT_MD_OMOP' as string) as SOURCE_TABLE,
 from 
 `nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`HUB_SITE_PATIENT_OMOP` hspo 
 inner join 

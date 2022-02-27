@@ -69,5 +69,9 @@ WHERE
 	AND ssp.OMD_DELETED_RECORD_INDICATOR = 'N'
 )
 
-select * from alcohol_bp;
+SELECT DISTINCT * FROM 
+alcohol_bp s1
+where OMD_SOURCE_ROW_ID = (SELECT MAX(OMD_SOURCE_ROW_ID) 
+FROM alcohol_bp s2
+WHERE s1.PATIENT_NUMBER = s2.PATIENT_NUMBER);
 

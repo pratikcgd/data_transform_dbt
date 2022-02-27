@@ -74,5 +74,9 @@ WHERE
 	AND ssp.OMD_DELETED_RECORD_INDICATOR = 'N'
 )
 
-select * from allergy_phc_md;
+SELECT DISTINCT * FROM 
+allergy_phc_md s1
+where OMD_SOURCE_ROW_ID = (SELECT MAX(OMD_SOURCE_ROW_ID) 
+FROM allergy_phc_md s2
+WHERE s1.PATIENT_NUMBER = s2.PATIENT_NUMBER);
 

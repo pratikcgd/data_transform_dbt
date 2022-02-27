@@ -10,4 +10,4 @@ select * from `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_O
 UNION all
 select * from `nps-omop-project`.`C_SREDH_NPS_MI_STAGING_SIMPLIFIED_2021_VIEWS_ONLY`.`src_practice_contact_phc_md`
 )
-select * from source_practice_contact
+select distinct * from source_practice_contact

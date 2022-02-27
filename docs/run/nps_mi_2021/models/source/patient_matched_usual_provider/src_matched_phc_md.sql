@@ -8,8 +8,8 @@
 select 
 cast(lbdv.HUB_SITE_PATIENT_SK as string) as PATIENT_NUMBER,
 cast(hpo.SITE_ID as string) as SITE_ID,
-cast(hpo.PRACTITIONER_ID as string) as PROVIDER_ID,
-cast('PHC_MD' as string) as SOURCE_SYSTEM,
+cast(NULL as string) as PROVIDER_ID,
+cast('MD_PHC' as string) as SOURCE_SYSTEM,
 cast('SAT_SITE_PROVIDER_PHC_MD_OMOP' as string) as SOURCE_TABLE,
 cast(sspb.PROVIDER_NO as string) AS PROVIDER_NUMBER,
 cast(sspb.PRESCRIBER_NO as string) as PRESCRIBER_NUMBER,
@@ -67,7 +67,7 @@ inner join
 `nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`HUB_SITE_PATIENT_OMOP` hsp
 ON lbdv.HUB_SITE_PATIENT_SK = hsp.HUB_SITE_PATIENT_SK
 INNER join
-`nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`SAT_SITE_PATIENT_MD_OMOP` ssp
+`nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`SAT_SITE_PATIENT_PHC_MD_OMOP` ssp
 ON hsp.HUB_SITE_PATIENT_SK = ssp.HUB_SITE_PATIENT_SK
 where 
 	sspb.OMD_CURRENT_RECORD_INDICATOR = 'Y'

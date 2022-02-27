@@ -15,7 +15,9 @@ cast(NULL as string) as CONTACT_SALUTATION,
 cast(satt.FIRST_NAME as string) as CONTACT_FIRSTNAME,
 cast(satt.SURNAME as string) as CONTACT_LASTNAME,
 cast(NULL as string) as CONTACT_NPS_ROLE,
-cast(NULL as string) as CONTACT_MEDICINEINSIGHT_ROLE
+cast(NULL as string) as CONTACT_MEDICINEINSIGHT_ROLE,
+cast('BP_PHC' as string) as SOURCE_SYSTEM,
+cast('SAT_SITE_PROVIDER_PHC_BP_OMOP' as string) as SOURCE_TABLE
 from 
 `nps-omop-project`.`B_SREDH_NPS_MI_SF_RDV_BDV_2021`.`HUB_PROVIDER_OMOP` hubb
 inner join 
